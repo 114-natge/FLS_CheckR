@@ -2,7 +2,7 @@
 
 FLS_CheckR is a small desktop app that scans a flash drive, shows its folder structure, and lists what is wrong with it. It also has tools to rescue files from a damaged drive.
 
-It is a hobby tool written in Python. Use it at your own risk, and keep a second copy of anything important :)
+It is a hobby tool written in Python. Use it at your own risk, and keep a second copy of anything important. I think theres bug on it cuz it's still (WIP). Sorry for the inconvenience :(
 
 ## What it does
 
