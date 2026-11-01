@@ -1,6 +1,6 @@
-# FlashCheck
+# FLS_CheckR
 
-FlashCheck is a small desktop app that scans a flash drive, shows its folder structure, and lists what is wrong with it. It also has tools to rescue files from a damaged drive.
+FLS_CheckR is a small desktop app that scans a flash drive, shows its folder structure, and lists what is wrong with it. It also has tools to rescue files from a damaged drive.
 
 It is a hobby tool written in Python. Use it at your own risk, and keep a second copy of anything important.
 
@@ -24,7 +24,7 @@ The scan and **Rescue files** only read the drive. The tools that can change the
 ## How to run
 
 ```
-python flashcheck.py
+python FLS_CheckR.py
 ```
 
 1. Plug in the drive and pick it in the left list. Press **Refresh** if it isn't there.
@@ -38,7 +38,7 @@ For CHKDSK, start the app with **Run as administrator**.
 To use PhotoRec and TestDisk from the app, put them next to the app:
 
 ```
-flashcheck.py
+FLS_CheckR.py
 README.md
 testdisk-7.x/            (the unzipped TestDisk & PhotoRec folder)
     photorec_win.exe
@@ -99,7 +99,7 @@ TestDisk repairs partitions and file systems and can copy files out with their n
 
 ### The drive shows 1 MB (or 0 B) instead of its real size.
 
-The drive's controller has crashed and is reporting a tiny fallback size. FlashCheck, TestDisk and PhotoRec can only see that small size, so they can't recover files from it. If you only want the drive to work again, wipe it in diskpart:
+The drive's controller has crashed and is reporting a tiny fallback size. FLS_CheckR, TestDisk and PhotoRec can only see that small size, so they can't recover files from it. If you only want the drive to work again, wipe it in diskpart:
 
 ```
 diskpart
@@ -123,7 +123,7 @@ CHKDSK can sit on one percentage for a long time on a damaged drive. If the driv
 
 ### Run CHKDSK says it needs administrator rights.
 
-Close FlashCheck and start it again with **Run as administrator**. Without that, CHKDSK reports "Access Denied".
+Close FLS_CheckR and start it again with **Run as administrator**. Without that, CHKDSK reports "Access Denied".
 
 ### Run CHKDSK says it needs a drive, not a folder.
 
@@ -151,11 +151,11 @@ The scan, the folder tree, Rescue files and Disable autorun work. CHKDSK and the
 
 ### How do I use Diskpart in the app?
 
-Press **Diskpart** (it works even when no drive has a letter) and start FlashCheck with **Run as administrator**. Press **List disks**, pick your flash drive by its size, and press **Disk details** to check it. **Wipe and format** erases the disk, creates one partition, formats it (exFAT, NTFS or FAT32) and gives it a drive letter. It refuses Disk 0 and any disk that is not reported as USB, and you must type `ERASE N` to confirm. Tick **Full format** for a slow format that checks the whole drive.
+Press **Diskpart** (it works even when no drive has a letter) and start FLS_CheckR with **Run as administrator**. Press **List disks**, pick your flash drive by its size, and press **Disk details** to check it. **Wipe and format** erases the disk, creates one partition, formats it (exFAT, NTFS or FAT32) and gives it a drive letter. It refuses Disk 0 and any disk that is not reported as USB, and you must type `ERASE N` to confirm. Tick **Full format** for a slow format that checks the whole drive.
 
 ### Does it have a virus scanner?
 
-Press **Virus scan**. **Scan with Defender** runs Microsoft Defender's command-line scanner on the drive. It is on by default as "report only", so nothing is removed until you untick that box. **Update definitions** fetches the latest virus definitions, which needs internet. **Quick check** is FlashCheck's own light check: it finds the EICAR test file, disguised double-extension programs, scripts with suspicious commands, and files whose SHA-256 hash is listed in an optional `bad_hashes.txt` next to the app (one hash per line, an optional name after a space, `#` for comments). It does not replace antivirus. On Linux or macOS only the quick check works, so use ClamAV for a full scan.
+Press **Virus scan**. **Scan with Defender** runs Microsoft Defender's command-line scanner on the drive. It is on by default as "report only", so nothing is removed until you untick that box. **Update definitions** fetches the latest virus definitions, which needs internet. **Quick check** is FLS_CheckR's own light check: it finds the EICAR test file, disguised double-extension programs, scripts with suspicious commands, and files whose SHA-256 hash is listed in an optional `bad_hashes.txt` next to the app (one hash per line, an optional name after a space, `#` for comments). It does not replace antivirus. On Linux or macOS only the quick check works, so use ClamAV for a full scan.
 
 ### Can I scroll with a touchpad?
 
@@ -178,4 +178,4 @@ Copy some files onto it, scan it with **Read-test every file** ticked, and make 
 
 ## Credits
 
-PhotoRec and TestDisk are free programs by Christophe Grenier (cgsecurity.org). FlashCheck only starts them and is not affiliated with them.
+PhotoRec and TestDisk are free programs by Christophe Grenier (cgsecurity.org). FLS_CheckR only starts them and is not affiliated with them.
