@@ -17,6 +17,7 @@ The scan and **Rescue files** only read the drive. The tools that can change the
 
 ## Requirements
 
+- PhotoRec and TestDisk(literally free :))
 - Python 3.8 or newer. No extra packages are needed.
 - Tkinter, which comes with Python on Windows and macOS. On Linux, install it with `sudo apt install python3-tk`.
 - Windows is the main target. The scan works on Linux and macOS too, but CHKDSK and the PhotoRec/TestDisk launchers are Windows only.
